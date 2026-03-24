@@ -41,7 +41,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh """
-                export KUBECONFIG=/var/lib/jenkins/.kube/config
+                aws eks update-kubeconfig --region ap-southeast-2 --name cluster1
                 kubectl apply -f hotstar.yml
                 """
             }
