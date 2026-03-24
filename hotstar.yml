@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: hotstar-container
-      image: sai798187/hotstar:latest
+      image: sai798187/hotstarimg:latest
       ports:
         - containerPort: 8080
