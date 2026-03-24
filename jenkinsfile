@@ -46,9 +46,9 @@ pipeline {
                     kubectl get nodes
                     kubectl apply -f hotstar.yml
                     '''
-            }
-        }
-    }
+                 }
+             }
+          }
 
     post {
         success {
