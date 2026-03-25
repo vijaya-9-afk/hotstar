@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = "docker_cred"
+        DOCKERHUB_CREDENTIALS = "vijaya9494"
         IMAGE_NAME = "hotstarimg"
         IMAGE_TAG = "latest"
     }
