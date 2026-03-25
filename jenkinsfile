@@ -51,29 +51,14 @@ pipeline {
             }
         }
      }
-
-    post {
-
-        always {
-            echo "Pipeline execution completed"
-        }
-
-        success {
-            echo "Build SUCCESS "
-            mail to: 'sai798187@gmail.com',
-                 subject: "Jenkins SUCCESS: ${env.JOB_NAME}",
-                 body: "Build succeeded: ${env.BUILD_URL}"
-        }
-
-        failure {
-            echo "Build FAILED "
-            mail to: 'sai798187@gmail.com',
-                 subject: "Jenkins FAILURE: ${env.JOB_NAME}",
-                 body: "Build failed: ${env.BUILD_URL}"
-        }
-
-        unstable {
-            echo "Build UNSTABLE "
-        }
+       post {
+                success {
+                    emailext(
+                        subject: "Checkout Success",
+                        body: "Checkout completed",
+                        to: "sai798187@gmail.com"
+                    )
+                }
+            }
     }
 }
