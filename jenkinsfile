@@ -52,11 +52,27 @@ pipeline {
      }
 
     post {
-        success {
-            echo "Deployment Successful "
+
+        always {
+            echo "Pipeline execution completed"
         }
+
+        success {
+            echo "Build SUCCESS "
+            mail to: 'sai798187@gmail.com',
+                 subject: "Jenkins SUCCESS: ${env.JOB_NAME}",
+                 body: "Build succeeded: ${env.BUILD_URL}"
+        }
+
         failure {
-            echo "Deployment Failed "
+            echo "Build FAILED "
+            mail to: 'sai798187@gmail.com',
+                 subject: "Jenkins FAILURE: ${env.JOB_NAME}",
+                 body: "Build failed: ${env.BUILD_URL}"
+        }
+
+        unstable {
+            echo "Build UNSTABLE "
         }
     }
 }
