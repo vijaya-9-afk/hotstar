@@ -49,6 +49,25 @@
             </plugin>
         </plugins>
     </build>
+ <servers>
+    
+    <server>
+      <id>http://43.204.108.96:8081/repository/maven-releases/</id>
+      <username>admin</username>
+      <password>admin@123</password>
+    </server>
+    <server>
+      <id>http://43.204.108.96:8081/repository/maven-snapshots/</id>
+      <username>admin</username>
+      <password>admin@123</password>
+    </server>
+
+    <server>
+      <id>siteServer</id>
+      <privateKey>/path/to/private/key</privateKey>
+      <passphrase>optional; leave empty if not used.</passphrase>
+    </server>
+  </servers>
 
     <pluginRepositories>
         <pluginRepository>
