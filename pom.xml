@@ -50,7 +50,6 @@
         </plugins>
     </build>
  <servers>
-    
     <server>
       <id>http://43.204.108.96:8081/repository/maven-releases/</id>
       <username>admin</username>
